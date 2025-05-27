@@ -12,7 +12,7 @@ export function useListings() {
     dispatch({ type: "FETCH_START" })
 
     try {
-      const response = await fetch("/listings.json")
+      const response = await fetch("/data/listings.json")
       if (!response.ok) {
         throw new Error("Failed to fetch listings")
       }
