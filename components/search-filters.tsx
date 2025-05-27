@@ -31,32 +31,28 @@ export function SearchFilters({ filters, onFiltersChange, onClearFilters }: Sear
   const priceRanges = ["Under ₦1M", "₦1M - ₦2M", "₦2M - ₦3M", "₦3M - ₦5M", "Above ₦5M"]
 
   return (
-    <div className="container mx-auto px-4 mb-8">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+    <div className="max-w-[1440px] mx-auto px-4 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 w-full mx-auto border rounded-xl">
         {/* Property Type */}
-        <div className="bg-white rounded-lg shadow-sm border p-4 hover:shadow-md transition-shadow cursor-pointer">
+        <div className="bg-white rounded-lg shadow-sm  p-4 hover:shadow-md transition-shadow cursor-pointer">
           <div className="flex items-center gap-3 mb-3">
             <div
-              className="w-10 h-10 rounded-full flex items-center justify-center"
+              className="w-10 h-10 rounded-lg flex items-center justify-center"
               style={{ backgroundColor: "#007AEA" }}
             >
               <Building className="h-5 w-5 text-white" />
             </div>
             <div className="flex-1">
               <p className="text-sm font-semibold text-gray-900">Property Type</p>
-              <p className="text-xs text-gray-500">Select property type</p>
-            </div>
-            <ChevronDown className="h-4 w-4 text-gray-400" />
-          </div>
           <Select
-            value={filters.propertyType || "any"}
-            onValueChange={(value) => throttledFilterChange({ propertyType: value === "any" ? "" : value })}
+            value={filters.propertyType || "all"}
+            onValueChange={(value) => throttledFilterChange({ propertyType: value === "all" ? "" : value })}
           >
             <SelectTrigger className="border-0 p-0 h-auto shadow-none">
-              <SelectValue placeholder="Any" />
+              <SelectValue placeholder="All" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="any">Any</SelectItem>
+              <SelectItem value="all">All</SelectItem>
               {propertyTypes.map((type) => (
                 <SelectItem key={type} value={type}>
                   {type}
@@ -64,32 +60,31 @@ export function SearchFilters({ filters, onFiltersChange, onClearFilters }: Sear
               ))}
             </SelectContent>
           </Select>
+            </div>
+          </div>
         </div>
 
         {/* Location */}
-        <div className="bg-white rounded-lg shadow-sm border p-4 hover:shadow-md transition-shadow cursor-pointer">
+        <div className="bg-white rounded-lg shadow-sm  p-4 hover:shadow-md transition-shadow cursor-pointer">
           <div className="flex items-center gap-3 mb-3">
             <div
-              className="w-10 h-10 rounded-full flex items-center justify-center"
+              className="w-10 h-10 rounded-lg flex items-center justify-center"
               style={{ backgroundColor: "#007AEA" }}
             >
               <MapPin className="h-5 w-5 text-white" />
             </div>
             <div className="flex-1">
               <p className="text-sm font-semibold text-gray-900">Location</p>
-              <p className="text-xs text-gray-500">Select location</p>
-            </div>
-            <ChevronDown className="h-4 w-4 text-gray-400" />
-          </div>
+             
           <Select
-            value={filters.location || "any"}
-            onValueChange={(value) => throttledFilterChange({ location: value === "any" ? "" : value })}
+            value={filters.location || "all"}
+            onValueChange={(value) => throttledFilterChange({ location: value === "all" ? "" : value })}
           >
             <SelectTrigger className="border-0 p-0 h-auto shadow-none">
-              <SelectValue placeholder="Any" />
+              <SelectValue placeholder="All" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="any">Any</SelectItem>
+              <SelectItem value="all">All</SelectItem>
               {locations.map((location) => (
                 <SelectItem key={location} value={location}>
                   {location}
@@ -97,32 +92,31 @@ export function SearchFilters({ filters, onFiltersChange, onClearFilters }: Sear
               ))}
             </SelectContent>
           </Select>
+            </div>
+            
+          </div>
         </div>
 
         {/* Price Range */}
-        <div className="bg-white rounded-lg shadow-sm border p-4 hover:shadow-md transition-shadow cursor-pointer">
+        <div className="bg-white rounded-lg shadow-sm  p-4 hover:shadow-md transition-shadow cursor-pointer">
           <div className="flex items-center gap-3 mb-3">
             <div
-              className="w-10 h-10 rounded-full flex items-center justify-center"
+              className="w-10 h-10 rounded-lg flex items-center justify-center"
               style={{ backgroundColor: "#007AEA" }}
             >
               <DollarSign className="h-5 w-5 text-white" />
             </div>
             <div className="flex-1">
               <p className="text-sm font-semibold text-gray-900">Price Range</p>
-              <p className="text-xs text-gray-500">₦500,000 - ₦5,000,000</p>
-            </div>
-            <ChevronDown className="h-4 w-4 text-gray-400" />
-          </div>
           <Select
-            value={filters.priceRange || "any"}
-            onValueChange={(value) => throttledFilterChange({ priceRange: value === "any" ? "" : value })}
+            value={filters.priceRange || "all"}
+            onValueChange={(value) => throttledFilterChange({ priceRange: value === "all" ? "" : value })}
           >
             <SelectTrigger className="border-0 p-0 h-auto shadow-none">
-              <SelectValue placeholder="Any" />
+              <SelectValue placeholder="All" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="any">Any</SelectItem>
+              <SelectItem value="all">All</SelectItem>
               {priceRanges.map((range) => (
                 <SelectItem key={range} value={range}>
                   {range}
@@ -130,29 +124,34 @@ export function SearchFilters({ filters, onFiltersChange, onClearFilters }: Sear
               ))}
             </SelectContent>
           </Select>
+            </div>
+          </div>
         </div>
 
         {/* Search */}
-        <div className="bg-white rounded-lg shadow-sm border p-4 hover:shadow-md transition-shadow">
+        <div className=" p-4 ">
+          <div className="bg-primary rounded-lg shadow-sm  px-2 hover:shadow-md transition-shadow">
+
+
           <div className="flex items-center gap-3 mb-3">
-            <div
-              className="w-10 h-10 rounded-full flex items-center justify-center"
-              style={{ backgroundColor: "#007AEA" }}
-            >
-              <Search className="h-5 w-5 text-white" />
-            </div>
-            <div className="flex-1">
-              <p className="text-sm font-semibold text-gray-900">Search</p>
-              <p className="text-xs text-gray-500">Search properties</p>
-            </div>
-          </div>
+           <div className="flex-1">
           <input
             type="text"
             placeholder="Type to search..."
             value={localSearchTerm}
             onChange={(e) => setLocalSearchTerm(e.target.value)}
-            className="w-full border-0 p-0 text-sm focus:outline-none focus:ring-0 placeholder:text-gray-400"
+            className="bg-primary w-full border-0 p-0 text-white text-sm focus:outline-none focus:ring-0 placeholder:text-white"
           />
+            </div>
+            <div
+              className="w-10 h-10 rounded-lg flex items-center justify-center"
+              style={{ backgroundColor: "#007AEA" }}
+            >
+              <Search className="h-5 w-5 text-white" />
+            </div>
+            
+          </div>
+          </div>
         </div>
       </div>
 
