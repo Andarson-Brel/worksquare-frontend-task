@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# WorkSquare Senior Frontend Vetting Task
 
-## Getting Started
+Welcome! This vetting task is designed to assess your ability to build clean, responsive frontend interfaces and follow modern development practices.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Objective
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Build a housing listings interface using a frontend framework of your choice.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Supported Stacks:
+- React 
+- Vue.js
+- Angular
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Requirements
 
-To learn more about Next.js, take a look at the following resources:
+- Load listing data from a `listings.json` file (provided separately via email)
+- Display listings in a responsive layout
+- Implement filter/search by **location** or **property type**
+- Use functional components & Hooks (if using React)
+- Use Tailwind CSS, CSS Modules, or any modern styling method
+- Add basic UI animations
+- Show **loading** and **empty** states
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## What We’re Looking For
 
-## Deploy on Vercel
+- Clean, modular, and maintainable code
+- Responsive design
+- Clear Git history with meaningful commits
+- Organized project structure
+- Thoughtful UX/UI decisions
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Submission
+
+1. **Fork** this repo
+2. Setup your frontend project inside the fork (no starter files are provided)
+3. Commit your code with meaningful messages
+4. Push to your forked repo
+5. Send your repo and hosted link via email
+
+🕒 **Deadline**: 72 hours after receiving this task
+
+---
+
+## Note
+
+You’ll receive the `listings.json` data separately. Please create a file in your project and paste the data to use it locally.
+
+
