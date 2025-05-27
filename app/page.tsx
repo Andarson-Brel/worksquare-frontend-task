@@ -5,6 +5,7 @@ import { SearchFilters } from "@/components/search-filters";
 import { useListings } from "@/hooks/use-listings";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { AlertCircle } from "lucide-react";
+import { PropertyGrid } from "@/components/property-grid";
 
 export default function Home() {
   const { listings, filteredListings, loading, error, filters, setFilter } =
@@ -26,8 +27,8 @@ export default function Home() {
     });
   };
   return (
-    <div className="max-w-[1440px] mx-auto  py-8">
-      <main>
+    <div className="max-w-[1440px]  mx-auto  py-8">
+      <main className="container mx-auto px-4">
         {/* rental type component */}
         <RentalTypeTabs activeTab={activeTab} onTabChange={handleTabChange} />
 
@@ -68,7 +69,9 @@ export default function Home() {
           </div>
         </div>
         {/* Listing section */}
-        
+         <div className="container mx-auto px-4">
+          <PropertyGrid listings={filteredListings} loading={loading} />
+        </div>
       </main>
     </div>
   );

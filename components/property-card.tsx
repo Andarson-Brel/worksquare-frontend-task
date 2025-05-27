@@ -3,7 +3,7 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Bed, Bath, MapPin } from "lucide-react"
+import { Bed, Bath, MapPin, ArrowRight } from "lucide-react"  // Import the ArrowRight icon
 import { useRouter } from "next/navigation"
 import type { Listing } from "@/types/listing"
 
@@ -21,15 +21,15 @@ export function PropertyCard({ listing }: PropertyCardProps) {
   return (
     <Card className="overflow-hidden transition-all duration-300 hover:shadow-lg">
       <CardContent className="p-0">
-        <div className="flex">
-          {/* Image on the left */}
-          <div className="relative w-48 h-40 flex-shrink-0">
+        <div className="flex flex-col sm:flex-row">
+          {/* Image on the top for mobile, on the left for desktop/tablet */}
+          <div className="relative  w-full sm:w-48 sm:h-full  flex-shrink-0">
             <img
               src={`/placeholder.svg?height=160&width=192&text=${listing.title.slice(0, 20)}`}
               alt={listing.title}
               className="w-full h-full object-cover"
             />
-            <div className="absolute top-2 left-2 flex gap-1">
+            <div className="absolute top-2 right-2 flex gap-1">
               <Badge variant="secondary" className="bg-white/90 text-xs">
                 {listing.status[0]}
               </Badge>
@@ -39,28 +39,28 @@ export function PropertyCard({ listing }: PropertyCardProps) {
             </div>
           </div>
 
-          {/* Content on the right */}
+          {/* Content below the image for mobile, on the right for desktop/tablet */}
           <div className="flex-1 p-4">
             <div className="mb-2">
-              <p className="text-2xl font-bold text-gray-900 mb-1">{listing.price}</p>
+              <p className="text-xl font-semibold text-gray-900 mb-1">{listing.price}</p>
             </div>
 
             <div className="flex items-center gap-4 text-sm text-gray-600 mb-2">
               <div className="flex items-center gap-1">
                 <Bed className="h-4 w-4" />
-                <span>{listing.bedrooms} Bedrooms</span>
+                <span className="text-[12px]">{listing.bedrooms} Bedrooms</span>
               </div>
               <div className="flex items-center gap-1">
                 <Bath className="h-4 w-4" />
-                <span>{listing.bathrooms} Bathrooms</span>
+                <span className="text-[12px]">{listing.bathrooms} Bathrooms</span>
               </div>
               <div className="flex items-center gap-1">
                 <MapPin className="h-4 w-4" />
-                <span>{listing.location}</span>
+                <span className="text-[12px]">{listing.location}</span>
               </div>
             </div>
 
-            <h3 className="font-medium text-gray-900 line-clamp-2 mb-3 text-sm">{listing.title}</h3>
+            <h3 className="font-medium text-gray-900 line-clamp-2 mb-3 text-xl">{listing.title}</h3>
 
             <Button
               size="sm"
@@ -68,7 +68,8 @@ export function PropertyCard({ listing }: PropertyCardProps) {
               style={{ backgroundColor: "#007AEA" }}
               onClick={handleViewDetails}
             >
-              View Details
+              View 
+              <ArrowRight className="mr-2 h-4 w-4" /> {/* Add the right arrow icon */}
             </Button>
           </div>
         </div>

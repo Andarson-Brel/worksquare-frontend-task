@@ -50,7 +50,7 @@ export function PropertyGrid({ listings, loading }: PropertyGridProps) {
   }
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
       {listings.map((listing) => (
         <div
           key={listing.id}
