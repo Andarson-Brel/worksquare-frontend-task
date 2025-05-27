@@ -7,6 +7,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import { AlertCircle } from "lucide-react";
 import { PropertyGrid } from "@/components/property-grid";
 import NewsletterSection from "@/components/news-letter";
+import Footer from "@/components/footer";
 
 export default function Home() {
   const { listings, filteredListings, loading, error, filters, setFilter } =
@@ -100,6 +101,8 @@ export default function Home() {
         </div>
       </section>
       {/* <NewsletterSection/> */}
+<Footer/>
+
     </div>
   );
 }
