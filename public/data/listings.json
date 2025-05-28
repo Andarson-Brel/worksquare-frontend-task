@@ -202,7 +202,7 @@
 {
     "id": 21,
     "title": "Brand New 4 Bedroom Fully Detached Duplex With BQ",
-    "price": "2,500,000",
+    "price": "₦2,500,000",
     "bedrooms": 4,
     "bathrooms": 4,
     "location": "Lekki, Lagos",
@@ -212,7 +212,7 @@
   {
     "id": 22,
     "title": "Modern 3 Bedroom Terrace With Smart Features",
-    "price": "1,800,000",
+    "price": "₦1,800,000",
     "bedrooms": 3,
     "bathrooms": 3,
     "location": "Gwarinpa, Abuja",
@@ -222,7 +222,7 @@
   {
     "id": 23,
     "title": "Luxury 5 Bedroom Duplex with Pool & Cinema",
-    "price": "5,500,000",
+    "price": "₦5,500,000",
     "bedrooms": 5,
     "bathrooms": 6,
     "location": "Maitama, Abuja",
@@ -232,7 +232,7 @@
   {
     "id":24,
     "title": "Elegant 2 Bedroom Apartment in Secure Estate",
-    "price": "950,000",
+    "price": "₦950,000",
     "bedrooms": 2,
     "bathrooms": 2,
     "location": "Ikeja, Lagos",
@@ -242,7 +242,7 @@
   {
     "id": 25,
     "title": "4 Bedroom Semi Detached with BQ",
-    "price": "2,000,000",
+    "price": "₦2,000,000",
     "bedrooms": 4,
     "bathrooms": 4,
     "location": "Ajah, Lagos",
@@ -252,7 +252,7 @@
   {
     "id": 26,
     "title": "Smart 1 Bedroom Studio Apartment",
-    "price": "600,000",
+    "price": "₦600,000",
     "bedrooms": 1,
     "bathrooms": 1,
     "location": "Yaba, Lagos",
@@ -262,7 +262,7 @@
   {
     "id": 27,
     "title": "Newly Built 3 Bedroom Flat",
-    "price": "1,300,000",
+    "price": "₦1,300,000",
     "bedrooms": 3,
     "bathrooms": 3,
     "location": "Abule Egba, Lagos",
@@ -272,7 +272,7 @@
   {
     "id": 28,
     "title": "Furnished 2 Bedroom Shortlet Apartment",
-    "price": "200,000 / week",
+    "price": "₦200,000 / week",
     "bedrooms": 2,
     "bathrooms": 2,
     "location": "Wuse 2, Abuja",
@@ -282,7 +282,7 @@
   {
     "id": 29,
     "title": "5 Bedroom Duplex with Parking Space",
-    "price": "3,000,000",
+    "price": "₦3,000,000",
     "bedrooms": 5,
     "bathrooms": 5,
     "location": "Asokoro, Abuja",
@@ -292,7 +292,7 @@
   {
     "id": 30,
     "title": "3 Bedroom Apartment in Gated Estate",
-    "price": "1,700,000",
+    "price": "₦1,700,000",
     "bedrooms": 3,
     "bathrooms": 3,
     "location": "Chevron, Lekki",
@@ -302,7 +302,7 @@
   {
     "id": 31,
     "title": "Newly Renovated 2 Bedroom Apartment",
-    "price": "1,000,000",
+    "price": "₦1,000,000",
     "bedrooms": 2,
     "bathrooms": 2,
     "location": "Gbagada, Lagos",
@@ -312,7 +312,7 @@
   {
     "id": 32,
     "title": "Fully Furnished 1 Bedroom Apartment",
-    "price": "750,000",
+    "price": "₦750,000",
     "bedrooms": 1,
     "bathrooms": 1,
     "location": "Ilupeju, Lagos",
@@ -322,7 +322,7 @@
   {
     "id": 33,
     "title": "Brand New 4 Bedroom Duplex + BQ",
-    "price": "2,800,000",
+    "price": "₦2,800,000",
     "bedrooms": 4,
     "bathrooms": 4,
     "location": "Osapa, Lekki",
@@ -332,7 +332,7 @@
   {
     "id": 34,
     "title": "4 Bedroom Terrace + BQ in Gated Estate",
-    "price": "2,400,000",
+    "price": "₦2,400,000",
     "bedrooms": 4,
     "bathrooms": 4,
     "location": "Life Camp, Abuja",
@@ -342,7 +342,7 @@
   {
     "id": 35,
     "title": "3 Bedroom Penthouse Apartment",
-    "price": "3,200,000",
+    "price": "₦3,200,000",
     "bedrooms": 3,
     "bathrooms": 4,
     "location": "Ikoyi, Lagos",
@@ -352,7 +352,7 @@
   {
     "id": 36,
     "title": "Serviced Studio Apartment with Gym",
-    "price": "850,000",
+    "price": "₦850,000",
     "bedrooms": 1,
     "bathrooms": 1,
     "location": "Katampe, Abuja",
@@ -362,7 +362,7 @@
   {
     "id": 37,
     "title": "Furnished 4 Bedroom Duplex + BQ",
-    "price": "3,500,000",
+    "price": "₦3,500,000",
     "bedrooms": 4,
     "bathrooms": 5,
     "location": "Lekki Phase 1, Lagos",
@@ -372,7 +372,7 @@
   {
     "id": 38,
     "title": "Luxury 1 Bedroom Apartment – Shortlet",
-    "price": "150,000 / night",
+    "price": "₦150,000 / night",
     "bedrooms": 1,
     "bathrooms": 1,
     "location": "Victoria Island, Lagos",
@@ -382,7 +382,7 @@
   {
     "id": 39,
     "title": "Detached 5 Bedroom Mansion + Pool",
-    "price": "6,000,000",
+    "price": "₦6,000,000",
     "bedrooms": 5,
     "bathrooms": 6,
     "location": "Banana Island, Lagos",
@@ -392,7 +392,7 @@
   {
     "id": 40,
     "title": "3 Bedroom Smart Apartment",
-    "price": "1,900,000",
+    "price": "₦1,900,000",
     "bedrooms": 3,
     "bathrooms": 3,
     "location": "Lokogoma, Abuja",

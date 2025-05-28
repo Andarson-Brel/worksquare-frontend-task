@@ -19,11 +19,11 @@ export function PropertyCard({ listing }: PropertyCardProps) {
   }
 
   return (
-    <Card className="overflow-hidden transition-all duration-300 hover:shadow-lg">
-      <CardContent className="p-0">
-        <div className="flex flex-col sm:flex-row">
+    <Card className="overflow-hidden transition-all duration-300 hover:shadow-lg h-full">
+       <CardContent className="p-0 h-full">
+        <div className="flex flex-col sm:flex-row h-full items-stretch">
           {/* Image on the top for mobile, on the left for desktop/tablet */}
-          <div className="relative  w-full sm:w-48 sm:h-full  flex-shrink-0">
+           <div className="relative w-full sm:w-48 sm:h-full flex-shrink-0">
             <img
               src={`/placeholder.svg?height=160&width=192&text=${listing.title.slice(0, 20)}`}
               alt={listing.title}
@@ -40,7 +40,7 @@ export function PropertyCard({ listing }: PropertyCardProps) {
           </div>
 
           {/* Content below the image for mobile, on the right for desktop/tablet */}
-          <div className="flex-1 p-4">
+          <div className="flex-1 p-4 h-full flex flex-col justify-between">
             <div className="mb-2">
               <p className="text-xl font-semibold text-gray-900 mb-1">{listing.price}</p>
             </div>
@@ -61,16 +61,19 @@ export function PropertyCard({ listing }: PropertyCardProps) {
             </div>
 
             <h3 className="font-medium text-gray-900 line-clamp-2 mb-3 text-xl">{listing.title}</h3>
+<div>
 
             <Button
               size="sm"
-              className="text-white font-medium"
-              style={{ backgroundColor: "#007AEA" }}
+              className="text-white font-medium bg-primary"
+        
+  
               onClick={handleViewDetails}
             >
               View 
               <ArrowRight className="mr-2 h-4 w-4" /> {/* Add the right arrow icon */}
             </Button>
+</div>
           </div>
         </div>
       </CardContent>

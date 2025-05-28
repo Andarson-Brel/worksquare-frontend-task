@@ -1,13 +1,26 @@
+import React, { useState, useMemo } from "react"
 import { PropertyCard } from "./property-card"
 import { Skeleton } from "@/components/ui/skeleton"
 import type { Listing } from "@/types/listing"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 
 interface PropertyGridProps {
   listings: Listing[]
   loading: boolean
 }
 
+const ITEMS_PER_PAGE = 12
+
 export function PropertyGrid({ listings, loading }: PropertyGridProps) {
+  const [currentPage, setCurrentPage] = useState(1)
+
+  const totalPages = useMemo(() => Math.ceil(listings.length / ITEMS_PER_PAGE), [listings])
+
+  const currentListings = useMemo(() => {
+    const start = (currentPage - 1) * ITEMS_PER_PAGE
+    return listings.slice(start, start + ITEMS_PER_PAGE)
+  }, [currentPage, listings])
+
   if (loading) {
     return (
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -50,16 +63,51 @@ export function PropertyGrid({ listings, loading }: PropertyGridProps) {
   }
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-      {listings.map((listing) => (
-        <div
-          key={listing.id}
-          className="animate-in fade-in-0 duration-300"
-          style={{ animationDelay: `${listings.indexOf(listing) * 50}ms` }}
-        >
-          <PropertyCard listing={listing} />
+    <>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        {currentListings.map((listing, idx) => (
+          <div
+            key={listing.id}
+            className="animate-in fade-in-0 duration-300"
+            style={{ animationDelay: `${idx * 50}ms` }}
+          >
+            <PropertyCard listing={listing} />
+          </div>
+        ))}
+      </div>
+
+      {/* Pagination Controls */}
+      {totalPages > 1 && (
+        <div className="flex justify-center items-center space-x-2 mt-6">
+          <button
+            onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+            disabled={currentPage === 1}
+            className="px-3 py-1 rounded border disabled:opacity-50"
+            aria-label="Previous Page"
+          >
+            <ChevronLeft className="h-5 w-5" />
+          </button>
+
+          {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+            <button
+              key={page}
+              onClick={() => setCurrentPage(page)}
+              className={`px-3 py-1 rounded border ${page === currentPage ? 'bg-primary text-white' : ''}`}
+            >
+              {page}
+            </button>
+          ))}
+
+          <button
+            onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+            disabled={currentPage === totalPages}
+            className="px-3 py-1 rounded border disabled:opacity-50"
+            aria-label="Next Page"
+          >
+            <ChevronRight className="h-5 w-5" />
+          </button>
         </div>
-      ))}
-    </div>
+      )}
+    </>
   )
 }
