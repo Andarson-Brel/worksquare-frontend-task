@@ -1,50 +1,42 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { use, useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
-import { Header } from "@/components/header"
+
 import { PropertyDetails } from "@/components/property-details"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { AlertCircle } from "lucide-react"
 import type { Listing } from "@/types/listing"
 
 interface PropertyPageProps {
-  params: {
-    id: string
-  }
+  // Next.js now hands you a promise for params
+  params: Promise<{ id: string }>
 }
 
 export default function PropertyPage({ params }: PropertyPageProps) {
+    const { id } = use(params)
   const [property, setProperty] = useState<Listing | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const router = useRouter()
 
-  useEffect(() => {
-    const fetchProperty = async () => {
+   useEffect(() => {
+    ;(async () => {
       try {
         setLoading(true)
-        const response = await fetch("/data/listings.json")
-        if (!response.ok) {
-          throw new Error("Failed to fetch property data")
-        }
-        const listings: Listing[] = await response.json()
-        const foundProperty = listings.find((listing) => listing.id === Number.parseInt(params.id))
-
-        if (!foundProperty) {
-          throw new Error("Property not found")
-        }
-
-        setProperty(foundProperty)
-      } catch (err) {
-        setError(err instanceof Error ? err.message : "An error occurred")
+        const res = await fetch("/data/listings.json")
+        if (!res.ok) throw new Error("Failed to fetch")
+        const listings: Listing[] = await res.json()
+        const found = listings.find(l => l.id === Number(id))
+        if (!found) throw new Error("Property not found")
+        setProperty(found)
+      } catch (e) {
+        setError(e instanceof Error ? e.message : "Unknown error")
       } finally {
         setLoading(false)
       }
-    }
-
-    fetchProperty()
-  }, [params.id])
+    })()
+  }, [id])
 
   if (loading) {
     return (
