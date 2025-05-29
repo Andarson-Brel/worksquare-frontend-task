@@ -214,5 +214,4 @@ In the case of working with Large Data, the following improvements can be made
 1. **Server-Side Filtering**: Move filtering logic to the server for better performance with large datasets
 2. **Authentication**: Add user accounts for saving favorite properties
 3. **Real-time Updates**: Implement WebSockets for real-time property updates
-4. **Advanced Filtering**: Add more filter options like property age, amenities, etc.
-5. **Map Integration**: Add a map view for geographic property browsing
+
