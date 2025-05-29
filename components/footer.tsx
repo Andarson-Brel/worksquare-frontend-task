@@ -8,11 +8,11 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Logo / Branding */}
         <div className="flex flex-col md:flex-row md:justify-between items-center text-white mb-8">
-          <div className="text-center md:text-right">
-            <h1 className="font-bold text-4xl sm:text-5xl md:text-6xl lg:text-[250px] leading-tight">
+          <div className="text-center md:text-right max-w-full">
+            <h1 className="font-bold text-4xl sm:text-5xl md:text-6xl lg:text-[150px] xl:text-[200px] 2xl:text-[220px] leading-tight">
               DreamDwell
             </h1>
-            <p className="mt-2 text-lg sm:text-2xl md:text-3xl lg:text-[50px] opacity-90">
+            <p className="mt-2 text-lg sm:text-2xl md:text-3xl lg:text-[40px] opacity-90">
               Estates
             </p>
           </div>
