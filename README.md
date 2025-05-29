@@ -125,12 +125,12 @@ React.useEffect(() => {
 **Decision**: Implemented client-side filtering using in-memory data.
 
 **Trade-offs**:
-- ✅ **Pros**: 
+- **Pros**: 
   - Faster initial implementation
   - Instant filtering without server roundtrips
   - Works offline once data is loaded
   
-- ❌ **Cons**:
+- **Cons**:
   - Not scalable for very large datasets
   - Increased client-side memory usage
   - Limited to browser capabilities
@@ -142,12 +142,12 @@ React.useEffect(() => {
 **Decision**: Used custom React hooks with useReducer instead of Redux or other global state libraries.
 
 **Trade-offs**:
-- ✅ **Pros**:
+- **Pros**:
   - Reduced dependencies
   - Simpler mental model
   - Better code co-location
   
-- ❌ **Cons**:
+- **Cons**:
   - Less standardized approach
   - Potential for prop drilling in deeper component trees
   - No built-in dev tools like Redux DevTools
@@ -159,12 +159,12 @@ React.useEffect(() => {
 **Decision**: Used static JSON data instead of a real API.
 
 **Trade-offs**:
-- ✅ **Pros**:
+- **Pros**:
   - Simplified development and testing
   - No backend dependencies
   - Predictable data for development
   
-- ❌ **Cons**:
+- **Cons**:
   - Not representative of real-world data fetching challenges
   - No real-time updates
   - Limited data set
@@ -176,12 +176,12 @@ React.useEffect(() => {
 **Decision**: Created medium-grained components with clear responsibilities.
 
 **Trade-offs**:
-- ✅ **Pros**:
+- **Pros**:
   - Balanced reusability and complexity
   - Easier to understand component purposes
   - Reasonable file structure
   
-- ❌ **Cons**:
+- **Cons**:
   - Potential for component bloat in complex views
 
 **Rationale**: This level of granularity provided a good balance between maintainability and development speed. Components are specific enough to be reusable but not so granular that the component tree becomes difficult to navigate.
@@ -212,7 +212,6 @@ React.useEffect(() => {
 ## Future Improvements
 In the case of working with Large Data, the following improvements can be made
 1. **Server-Side Filtering**: Move filtering logic to the server for better performance with large datasets
-2. **Authentication**: Add user accounts for saving favorite properties
+2. **Authentication**: Add user accounts for saving favorite properties and user personal and important activities
 3. **Real-time Updates**: Implement WebSockets for real-time property updates
-4. **Advanced Filtering**: Add more filter options like property age, amenities, etc.
-5. **Map Integration**: Add a map view for geographic property browsing
+

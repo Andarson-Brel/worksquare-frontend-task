@@ -97,7 +97,7 @@ export function SearchFilters({ filters, onFiltersChange, onClearFilters }: Sear
           </div>
         </div>
 
-        {/* Price Range */}
+        {/* Price Ranges */}
         <div className="bg-white rounded-lg shadow-sm  p-4 hover:shadow-md transition-shadow cursor-pointer">
           <div className="flex items-center gap-3 mb-3">
             <div
